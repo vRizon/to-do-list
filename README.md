@@ -2,7 +2,7 @@
 
 A minimal dark-mode task manager built with React.
 
----
+![Dark Mode Desktop](./src/assets/darkmode.png)
 
 ## Features
 
