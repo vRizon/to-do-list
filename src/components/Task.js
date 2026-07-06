@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Task({ item, onChecked }) {
+export default function Task({ item, onChecked, onDelete }) {
   //when box is checked => that task status is "done", pass a key
   const [check, setCheck] = useState(false);
 
@@ -19,7 +19,9 @@ export default function Task({ item, onChecked }) {
         <option value="done">Done</option>
       </select>
 
-      <button className="task-delete">Delete</button>
+      <button className="task-delete" onClick={() => onDelete(item.id)}>
+        Delete
+      </button>
     </div>
   );
 }

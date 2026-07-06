@@ -29,6 +29,12 @@ export default function App() {
     );
   }
 
+  //if id===id then delete that item from array
+
+  function handleDelete(id) {
+    setTasks((tasks) => tasks.filter((task) => task.id !== id));
+  }
+
   return (
     <div className="todo-wrapper">
       <Header />
@@ -37,6 +43,7 @@ export default function App() {
         tasks={tasks}
         onAddTask={handleAddTask}
         onChecked={handleChecked}
+        onDelete={handleDelete}
       />
     </div>
   );

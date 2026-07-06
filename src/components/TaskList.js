@@ -1,7 +1,12 @@
 import { useState } from "react";
 import Task from "./Task";
 
-export default function TaskList({ tasks = [], onAddTask, onChecked }) {
+export default function TaskList({
+  tasks = [],
+  onAddTask,
+  onChecked,
+  onDelete,
+}) {
   const [newTask, setNewTask] = useState("");
 
   function handleSubmit(e) {
@@ -10,6 +15,8 @@ export default function TaskList({ tasks = [], onAddTask, onChecked }) {
 
     const task = { id: Date.now(), text: newTask, status: "not started" };
     onAddTask(task);
+
+    setNewTask("");
   }
 
   return (
@@ -34,7 +41,12 @@ export default function TaskList({ tasks = [], onAddTask, onChecked }) {
       </div>
       <div className="task-list">
         {tasks.map((item, i) => (
-          <Task key={item.id} item={item} onChecked={onChecked} />
+          <Task
+            key={item.id}
+            item={item}
+            onChecked={onChecked}
+            onDelete={onDelete}
+          />
         ))}
       </div>
     </>
