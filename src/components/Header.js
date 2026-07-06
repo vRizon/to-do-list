@@ -1,4 +1,7 @@
-export default function Header() {
+import { useState } from "react";
+
+export default function Header({ lightMode, setLightMode }) {
+  // const [darkMode, setDarkMode] = useState(true);
   return (
     <div className="todo-header">
       <div>
@@ -7,10 +10,9 @@ export default function Header() {
       </div>
       <div className="toggle-wrap">
         <span className="toggle-label">Dark mode</span>
-        <label className="toggle">
-          <input type="checkbox" />
+        <div className="toggle" onClick={() => setLightMode(!lightMode)}>
           <div className="toggle-dot" />
-        </label>
+        </div>
       </div>
     </div>
   );

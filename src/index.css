@@ -7,9 +7,9 @@
 }
 
 body {
-  background: radial-gradient(50% 50% at 50% 50%, #623a45 0%, #26302c 93.27%);
   font-family: "Inter", sans-serif;
   min-height: 100vh;
+  transition: background 0.3s;
 }
 
 /* ── App shell ── */
@@ -17,13 +17,23 @@ body {
   max-width: 713px;
   min-height: 75vh;
   margin: 3rem auto;
-  background: #252826;
+
   border: 0.5px solid #383b38;
   border-radius: 20px;
   padding: 36px 60px;
 
   background: rgba(217, 217, 217, 0.1);
 }
+
+/* .todo-wrapper-light-mode {
+  max-width: 520px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #f5f5f3;
+  border-left: 0.5px solid #ddddd8;
+  border-right: 0.5px solid #ddddd8;
+  padding: 36px 32px;
+} */
 
 /* ── Header ── */
 .todo-header {
@@ -263,4 +273,78 @@ body {
 
 .footer-clear:hover {
   color: #8a8e8a;
+}
+
+/* LIGHT MODE */
+
+/* ── light mode color overrides ── */
+.todo-wrapper.light-mode {
+  background: #f5f5f3;
+  border-color: #ddddd8;
+}
+.todo-wrapper.light-mode .todo-greeting {
+  color: #999;
+}
+.todo-wrapper.light-mode .todo-name {
+  color: #1a1a1a;
+}
+.todo-wrapper.light-mode .toggle-label {
+  color: #999;
+}
+.todo-wrapper.light-mode .toggle {
+  background: #ccc;
+}
+.todo-wrapper.light-mode .toggle-dot {
+  left: 3px;
+}
+.todo-wrapper.light-mode .todo-divider {
+  background: #ddddd8;
+}
+.todo-wrapper.light-mode .todo-label {
+  color: #666;
+}
+.todo-wrapper.light-mode .todo-input {
+  background: #e4e4e1;
+  color: #1a1a1a;
+}
+.todo-wrapper.light-mode .todo-input::placeholder {
+  color: #aaa;
+}
+/* .todo-wrapper.light-mode .todo-add-btn {
+  background: #1a1a1a;
+} */
+.todo-wrapper.light-mode .filter-pill {
+  border-color: #ddddd8;
+  color: #666;
+}
+.todo-wrapper.light-mode .filter-pill--active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+.todo-wrapper.light-mode .task-row {
+  border-color: #e4e4e1;
+}
+.todo-wrapper.light-mode .task-text {
+  color: #1a1a1a;
+}
+.todo-wrapper.light-mode .task-text--done {
+  color: #bbb;
+}
+.todo-wrapper.light-mode .task-select {
+  border-color: #ddddd8;
+  color: #666;
+}
+.todo-wrapper.light-mode .task-select option {
+  background: #f5f5f3;
+  color: #1a1a1a;
+}
+.todo-wrapper.light-mode .task-delete {
+  color: #bbb;
+}
+.todo-wrapper.light-mode .footer-count {
+  color: #aaa;
+}
+.todo-wrapper.light-mode .footer-clear {
+  color: #aaa;
 }
