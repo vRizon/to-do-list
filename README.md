@@ -1,4 +1,4 @@
-# Todo List
+# To-Do List
 
 A minimal dark-mode task manager built with React.
 
