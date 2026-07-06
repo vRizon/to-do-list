@@ -30,8 +30,6 @@ export default function App() {
     );
   }
 
-  //if id===id then delete that item from array
-
   function handleDelete(id) {
     setTasks((tasks) => tasks.filter((task) => task.id !== id));
   }

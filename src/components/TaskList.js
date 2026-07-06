@@ -8,6 +8,7 @@ export default function TaskList({
   onDelete,
 }) {
   const [newTask, setNewTask] = useState("");
+  // let sortedTasks;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,6 +19,18 @@ export default function TaskList({
 
     setNewTask("");
   }
+
+  // function showAllTasks() {
+  //   setSortedTasks(tasks);
+  // }
+  // function showActiveTasks() {
+  //   sortedTasks = sortedTasks.filter((task) => task.status !== "not started");
+  // }
+  // function showDoneTasks() {
+  //   setSortedTasks((tasks) =>
+  //     sortedTasks.filter((task) => task.status === "done"),
+  //   );
+  // }
 
   return (
     <>
