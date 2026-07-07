@@ -8,7 +8,9 @@ export default function TaskList({
   onDelete,
 }) {
   const [newTask, setNewTask] = useState("");
-  // let sortedTasks;
+
+  const [sortBtn, setSortBtn] = useState("All");
+  let sortedTasks;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -20,18 +22,11 @@ export default function TaskList({
     setNewTask("");
   }
 
-  // function showAllTasks() {
-  //   setSortedTasks(tasks);
-  // }
-  // function showActiveTasks() {
-  //   sortedTasks = sortedTasks.filter((task) => task.status !== "not started");
-  // }
-  // function showDoneTasks() {
-  //   setSortedTasks((tasks) =>
-  //     sortedTasks.filter((task) => task.status === "done"),
-  //   );
-  // }
-
+  if (sortBtn === "All") sortedTasks = tasks;
+  if (sortBtn === "Active")
+    sortedTasks = tasks.filter((task) => task.status === "not started");
+  if (sortBtn === "Done")
+    sortedTasks = tasks.filter((task) => task.status === "done");
   return (
     <>
       <h2 className="todo-label">What do you want to do today?</h2>
@@ -48,12 +43,39 @@ export default function TaskList({
       </form>
 
       <div className="todo-filters">
-        <button className="filter-pill filter-pill--active">All</button>
-        <button className="filter-pill">Active</button>
-        <button className="filter-pill">Done</button>
+        <button
+          className={
+            sortBtn === "All"
+              ? "filter-pill filter-pill--active"
+              : "filter-pill"
+          }
+          onClick={() => setSortBtn("All")}
+        >
+          All
+        </button>
+        <button
+          className={
+            sortBtn === "Active"
+              ? "filter-pill filter-pill--active"
+              : "filter-pill"
+          }
+          onClick={() => setSortBtn("Active")}
+        >
+          Active
+        </button>
+        <button
+          className={
+            sortBtn === "Done"
+              ? "filter-pill filter-pill--active"
+              : "filter-pill"
+          }
+          onClick={() => setSortBtn("Done")}
+        >
+          Done
+        </button>
       </div>
       <div className="task-list">
-        {tasks.map((item, i) => (
+        {sortedTasks.map((item, i) => (
           <Task
             key={item.id}
             item={item}

@@ -2,7 +2,12 @@ import { useState } from "react";
 
 export default function Task({ item, onChecked, onDelete }) {
   //when box is checked => that task status is "done", pass a key
-  const [check, setCheck] = useState(false);
+  // const [check, setCheck] = useState(false);
+  let isChecked;
+  if (item.status === "done") isChecked = true;
+  else isChecked = false;
+
+  // console.log(isChecked);
 
   return (
     <div className="task-row">
@@ -10,6 +15,7 @@ export default function Task({ item, onChecked, onDelete }) {
         className="task-checkbox"
         type="checkbox"
         value={item.status === "done"}
+        checked={isChecked}
         onChange={() => onChecked(item.id)}
       ></input>
       <span className="task-text">{item.text}</span>
