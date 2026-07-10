@@ -25,7 +25,9 @@ export default function TaskList({
 
   if (sortBtn === "All") sortedTasks = tasks;
   if (sortBtn === "Active")
-    sortedTasks = tasks.filter((task) => task.status === "not started");
+    sortedTasks = tasks.filter(
+      (task) => task.status === "not started" || task.status === "in progress",
+    );
   if (sortBtn === "Done")
     sortedTasks = tasks.filter((task) => task.status === "done");
   return (
