@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Task({ item, onChecked, onDelete }) {
+export default function Task({ item, onChecked, onDelete, onStatusChange }) {
   //when box is checked => that task status is "done", pass a key
   // const [check, setCheck] = useState(false);
   let isChecked;
@@ -8,6 +8,7 @@ export default function Task({ item, onChecked, onDelete }) {
   else isChecked = false;
 
   // console.log(isChecked);
+  function onSelectStatus() {}
 
   return (
     <div className="task-row">
@@ -19,7 +20,11 @@ export default function Task({ item, onChecked, onDelete }) {
         onChange={() => onChecked(item.id)}
       ></input>
       <span className="task-text">{item.text}</span>
-      <select className="task-select" value={item.status}>
+      <select
+        className="task-select"
+        value={item.status}
+        onChange={(e) => onStatusChange(item.id, e.target.value)}
+      >
         <option value="not started">Not started</option>
         <option value="in progress">In progress</option>
         <option value="done">Done</option>

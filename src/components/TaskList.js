@@ -6,6 +6,7 @@ export default function TaskList({
   onAddTask,
   onChecked,
   onDelete,
+  onStatusChange,
 }) {
   const [newTask, setNewTask] = useState("");
 
@@ -81,6 +82,7 @@ export default function TaskList({
             item={item}
             onChecked={onChecked}
             onDelete={onDelete}
+            onStatusChange={onStatusChange}
           />
         ))}
       </div>

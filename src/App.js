@@ -30,6 +30,14 @@ export default function App() {
     );
   }
 
+  function handleChangedStatus(id, newStatus) {
+    setTasks((tasks) =>
+      tasks.map((task) =>
+        task.id === id ? { ...task, status: newStatus } : task,
+      ),
+    );
+  }
+
   function handleDelete(id) {
     setTasks((tasks) => tasks.filter((task) => task.id !== id));
   }
@@ -48,6 +56,7 @@ export default function App() {
         onAddTask={handleAddTask}
         onChecked={handleChecked}
         onDelete={handleDelete}
+        onStatusChange={handleChangedStatus}
       />
     </div>
   );
