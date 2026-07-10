@@ -8,7 +8,7 @@ A minimal dark-mode task manager built with React.
 
 - Add tasks by clicking the button or pressing Enter
 - Check off tasks to mark them as done
-- Filter tasks by All, Active, or Done
+- Filter tasks by All, Active, Done
 - Status dropdown per task — Not started, In progress, Done
 
 ---
@@ -16,8 +16,8 @@ A minimal dark-mode task manager built with React.
 ## Built With
 
 - React
-- CSS (no UI library)
-- Inter font via Google Fonts
+- CSS
+- Inter font
 
 ---
 
@@ -30,7 +30,7 @@ A minimal dark-mode task manager built with React.
 - Conditional class names
 - Array methods — `map`, `filter`
 - Form submission with Enter and button click
-- Toggle logic
+- Toggle logic (light/dark modes)
 
 ---
 
